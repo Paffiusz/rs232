@@ -201,8 +201,8 @@ Synthesizing Unit <rsinput>.
     Found 1-bit register for signal <d_ready>.
     Found 1-bit register for signal <led>.
     Found 4-bit up counter for signal <count>.
-    Found 4-bit adder for signal <d_ready$add0000> created at line 75.
     Found 1-bit register for signal <q<0>>.
+    Found 4-bit adder for signal <rs_data_o$add0000> created at line 75.
     Found 8-bit register for signal <rs_word>.
     Summary:
 	inferred   1 Counter(s).
@@ -322,30 +322,29 @@ Design Statistics
 # IOs                              : 5
 
 Cell Usage :
-# BELS                             : 369
+# BELS                             : 360
 #      GND                         : 1
-#      INV                         : 20
+#      INV                         : 21
 #      LUT1                        : 78
-#      LUT2                        : 18
-#      LUT2_L                      : 3
-#      LUT3                        : 18
-#      LUT3_L                      : 1
-#      LUT4                        : 38
-#      LUT4_L                      : 3
+#      LUT2                        : 13
+#      LUT3                        : 15
+#      LUT4                        : 37
+#      LUT4_D                      : 1
+#      LUT4_L                      : 1
 #      MUXCY                       : 122
-#      MUXF5                       : 2
+#      MUXF5                       : 6
 #      VCC                         : 1
 #      XORCY                       : 64
 # FlipFlops/Latches                : 112
 #      FD                          : 8
-#      FD_1                        : 7
-#      FDE                         : 9
-#      FDE_1                       : 8
-#      FDR                         : 75
+#      FD_1                        : 1
+#      FDE                         : 18
+#      FDR                         : 74
+#      FDR_1                       : 4
 #      FDRE                        : 1
+#      FDRE_1                      : 3
 #      FDRS                        : 1
 #      FDS                         : 1
-#      FDS_1                       : 1
 #      FDSE                        : 1
 # Clock Buffers                    : 2
 #      BUFG                        : 1
@@ -362,7 +361,7 @@ Selected Device : 3sd1800afg676-4
 
  Number of Slices:                      124  out of  16640     0%  
  Number of Slice Flip Flops:            111  out of  33280     0%  
- Number of 4 input LUTs:                179  out of  33280     0%  
+ Number of 4 input LUTs:                166  out of  33280     0%  
  Number of IOs:                           5
  Number of bonded IOBs:                   5  out of    519     0%  
     IOB Flip Flops:                       1
@@ -403,8 +402,8 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 9.996ns (Maximum Frequency: 100.040MHz)
-   Minimum input arrival time before clock: 3.811ns
+   Minimum period: 7.028ns (Maximum Frequency: 142.284MHz)
+   Minimum input arrival time before clock: 3.847ns
    Maximum output required time after clock: 5.531ns
    Maximum combinational path delay: No path found
 
@@ -452,33 +451,33 @@ Delay:               7.028ns (Levels of Logic = 17)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'ou/divi_clk/CLKout1'
-  Clock period: 9.996ns (frequency: 100.040MHz)
-  Total number of paths / destination ports: 135 / 39
+  Clock period: 6.616ns (frequency: 151.149MHz)
+  Total number of paths / destination ports: 135 / 48
 -------------------------------------------------------------------------
-Delay:               4.998ns (Levels of Logic = 2)
-  Source:            ou/count_3 (FF)
+Delay:               3.308ns (Levels of Logic = 2)
+  Source:            ou/count_1 (FF)
   Destination:       ou/rs_word_7 (FF)
   Source Clock:      ou/divi_clk/CLKout1 rising
   Destination Clock: ou/divi_clk/CLKout1 falling
 
-  Data Path: ou/count_3 to ou/rs_word_7
+  Data Path: ou/count_1 to ou/rs_word_7
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRS:C->Q            15   0.591   1.160  ou/count_3 (ou/count_3)
-     LUT4:I0->O            4   0.648   0.667  ou/rs_word_7_mux000011 (ou/d_ready_cmp_eq0000)
-     LUT2:I1->O            1   0.643   0.420  ou/rs_word_7_mux00000 (ou/rs_word_7_mux00000)
-     FDS_1:S                   0.869          ou/rs_word_7
+     FDR:C->Q             16   0.591   1.066  ou/count_1 (ou/count_1)
+     LUT4_L:I2->LO         1   0.648   0.103  ou/rs_word_7_mux0000_SW1 (N20)
+     LUT4:I3->O            1   0.648   0.000  ou/rs_word_7_mux0000 (ou/rs_word_7_mux0000)
+     FD_1:D                    0.252          ou/rs_word_7
     ----------------------------------------
-    Total                      4.998ns (2.751ns logic, 2.247ns route)
-                                       (55.0% logic, 45.0% route)
+    Total                      3.308ns (2.139ns logic, 1.169ns route)
+                                       (64.7% logic, 35.3% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'outo/divi_clk/CLKout'
-  Clock period: 4.831ns (frequency: 206.996MHz)
-  Total number of paths / destination ports: 64 / 11
+  Clock period: 4.455ns (frequency: 224.467MHz)
+  Total number of paths / destination ports: 61 / 11
 -------------------------------------------------------------------------
-Delay:               4.831ns (Levels of Logic = 2)
+Delay:               4.455ns (Levels of Logic = 2)
   Source:            outo/count_1 (FF)
   Destination:       outo/count_3 (FF)
   Source Clock:      outo/divi_clk/CLKout rising
@@ -489,18 +488,18 @@ Delay:               4.831ns (Levels of Logic = 2)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDR:C->Q              9   0.591   0.963  outo/count_1 (outo/count_1)
-     LUT4:I0->O            2   0.648   0.479  outo/q_mux0000_inv211 (outo/N10)
-     LUT4:I2->O            5   0.648   0.633  outo/q_mux0000_inv1 (outo/q_mux0000_inv)
+     LUT4_D:I0->LO         1   0.648   0.103  outo/q_mux0000_inv211 (N34)
+     LUT4:I3->O            5   0.648   0.633  outo/q_mux0000_inv1 (outo/q_mux0000_inv)
      FDS:S                     0.869          outo/TXD_o
     ----------------------------------------
-    Total                      4.831ns (2.756ns logic, 2.075ns route)
-                                       (57.0% logic, 43.0% route)
+    Total                      4.455ns (2.756ns logic, 1.699ns route)
+                                       (61.9% logic, 38.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'ou/divi_clk/CLKout1'
-  Total number of paths / destination ports: 8 / 8
+  Total number of paths / destination ports: 16 / 16
 -------------------------------------------------------------------------
-Offset:              3.811ns (Levels of Logic = 2)
+Offset:              3.847ns (Levels of Logic = 2)
   Source:            rst_i (PAD)
   Destination:       ou/count_2 (FF)
   Destination Clock: ou/divi_clk/CLKout1 rising
@@ -509,12 +508,12 @@ Offset:              3.811ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             5   0.849   0.776  rst_i_IBUF (rst_i_IBUF)
+     IBUF:I->O             6   0.849   0.812  rst_i_IBUF (rst_i_IBUF)
      LUT2:I0->O            6   0.648   0.669  ou/q_mux0000_inv1 (ou/q_mux0000_inv)
-     FDR:R                     0.869          ou/led
+     FDRE:R                    0.869          ou/d_ready
     ----------------------------------------
-    Total                      3.811ns (2.366ns logic, 1.445ns route)
-                                       (62.1% logic, 37.9% route)
+    Total                      3.847ns (2.366ns logic, 1.481ns route)
+                                       (61.5% logic, 38.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_i'
@@ -539,7 +538,7 @@ Offset:              1.521ns (Levels of Logic = 1)
 Timing constraint: Default OFFSET IN BEFORE for Clock 'outo/divi_clk/CLKout'
   Total number of paths / destination ports: 6 / 6
 -------------------------------------------------------------------------
-Offset:              3.635ns (Levels of Logic = 2)
+Offset:              3.700ns (Levels of Logic = 2)
   Source:            rst_i (PAD)
   Destination:       outo/count_3 (FF)
   Destination Clock: outo/divi_clk/CLKout rising
@@ -548,12 +547,12 @@ Offset:              3.635ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             5   0.849   0.636  rst_i_IBUF (rst_i_IBUF)
-     LUT4:I3->O            5   0.648   0.633  outo/q_mux0000_inv1 (outo/q_mux0000_inv)
+     IBUF:I->O             6   0.849   0.701  rst_i_IBUF (rst_i_IBUF)
+     LUT4:I2->O            5   0.648   0.633  outo/q_mux0000_inv1 (outo/q_mux0000_inv)
      FDS:S                     0.869          outo/TXD_o
     ----------------------------------------
-    Total                      3.635ns (2.366ns logic, 1.269ns route)
-                                       (65.1% logic, 34.9% route)
+    Total                      3.700ns (2.366ns logic, 1.334ns route)
+                                       (63.9% logic, 36.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'outo/divi_clk/CLKout'
@@ -587,7 +586,7 @@ Offset:              5.531ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              1   0.591   0.420  ou/led (ou/led)
+     FDE:C->Q              1   0.591   0.420  ou/led (ou/led)
      OBUF:I->O                 4.520          led_OBUF (led)
     ----------------------------------------
     Total                      5.531ns (5.111ns logic, 0.420ns route)
@@ -596,12 +595,12 @@ Offset:              5.531ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 6.53 secs
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.24 secs
  
 --> 
 
-Total memory usage is 226188 kilobytes
+Total memory usage is 225676 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

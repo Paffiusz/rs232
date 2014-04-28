@@ -75,6 +75,7 @@ variable q : state := waiting;
 				count := count + 1;
 				if count = 8 then
 					q:=waiting;
+					rs_data_o<=rs_word( 7 downto 0);
 					d_ready<='1';
 				end if;				
 			end if;			
@@ -95,7 +96,6 @@ process(div_clk)
 				when 5 => rs_word(5) <= sync_RXD;
 				when 6 => rs_word(6) <= sync_RXD;
 				when 7 => rs_word(7) <= sync_RXD;
-				when 8 => rs_data_o<=rs_word( 7 downto 0);
 				when others=> rs_word <= "00000000";
 			end case;
 		end if;

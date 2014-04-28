@@ -2,14 +2,14 @@ Command line:
    testtap_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  3271
+     -socket  3481
 
-Mon Apr 28 13:54:39 2014
+Mon Apr 28 14:06:23 2014
 
 
- Elaboration Time: 0.0468 sec
+ Elaboration Time: 0.046801 sec
 
- Current Memory Usage: 675.525 Meg
+ Current Memory Usage: 675.983 Meg
 
  Total Signals          : 41
  Total Nets             : 43
@@ -21,10 +21,12 @@ Mon Apr 28 13:54:39 2014
  Total Scalar Nets and Variables : 549
 Total Line Count : 90
 Total Line Count : 90
+Total Line Count : 90
+Total Line Count : 90
 
- Total Simulation Time: 0.764405 sec
+ Total Simulation Time: 0.873606 sec
 
- Current Memory Usage: 991.67 Meg
+ Current Memory Usage: 833.532 Meg
 
-Mon Apr 28 13:55:27 2014
+Mon Apr 28 14:08:22 2014
 
