@@ -59,15 +59,19 @@ variable q : state := waiting;
 	begin
 		if rising_edge(div_clk) then
 		
+		if rst_i = '1' then
+			q:= waiting;
+		end if;
+		
 			if q = waiting then
 				count:=0;
 				led<='0';
 				d_ready<='0';
 				if sync_RXD = '0' then
 					q := input;
+					led<='1';
 				end if;
 			elsif q=input then
-				led<='1';
 				count := count + 1;
 				if count = 8 then
 					q:=waiting;
@@ -91,17 +95,10 @@ process(div_clk)
 				when 5 => rs_word(5) <= sync_RXD;
 				when 6 => rs_word(6) <= sync_RXD;
 				when 7 => rs_word(7) <= sync_RXD;
+				when 8 => rs_data_o<=rs_word( 7 downto 0);
 				when others=> rs_word <= "00000000";
 			end case;
 		end if;
-end process;
-
-process(div_clk)
-
-	begin
-	if falling_edge(div_clk) and count = 8 then
-		rs_data_o<=rs_word( 7 downto 0);
-	end if;
 end process;
 
 end Behavioral;

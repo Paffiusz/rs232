@@ -1,0 +1,12 @@
+EN rsoutput NULL D:/PROGRAMOWANIE/Github/rs232/rs232/rsoutput.vhd sub00/vhpl08 1398685692
+EN synchronizer NULL D:/PROGRAMOWANIE/Github/rs232/rs232/synchronizer.vhd sub00/vhpl02 1398685686
+EN adder NULL D:/PROGRAMOWANIE/Github/rs232/rs232/adder.vhd sub00/vhpl06 1398685690
+AR freqdiv behavioral D:/PROGRAMOWANIE/Github/rs232/rs232/Freqdiv.vhd sub00/vhpl01 1398685685
+AR rsinput behavioral D:/PROGRAMOWANIE/Github/rs232/rs232/rsinput.vhd sub00/vhpl05 1398685689
+EN freqdiv NULL D:/PROGRAMOWANIE/Github/rs232/rs232/Freqdiv.vhd sub00/vhpl00 1398685684
+AR rsoutput behavioral D:/PROGRAMOWANIE/Github/rs232/rs232/rsoutput.vhd sub00/vhpl09 1398685693
+AR synchronizer behavioral D:/PROGRAMOWANIE/Github/rs232/rs232/synchronizer.vhd sub00/vhpl03 1398685687
+AR tapmadl behavioral D:/PROGRAMOWANIE/Github/rs232/rs232/top.vhd sub00/vhpl11 1398685695
+AR adder behavioral D:/PROGRAMOWANIE/Github/rs232/rs232/adder.vhd sub00/vhpl07 1398685691
+EN rsinput NULL D:/PROGRAMOWANIE/Github/rs232/rs232/rsinput.vhd sub00/vhpl04 1398685688
+EN tapmadl NULL D:/PROGRAMOWANIE/Github/rs232/rs232/top.vhd sub00/vhpl10 1398685694

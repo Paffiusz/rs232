@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-04-28T13:11:12</DateModified>
+  <DateModified>2014-04-28T13:45:42</DateModified>
   <ModuleName>tapmadl</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
+  <SummaryTimeStamp>2014-04-28T13:45:41</SummaryTimeStamp>
   <SavedFilePath>D:/PROGRAMOWANIE/Github/rs232/rs232/iseconfig/tapmadl.xreport</SavedFilePath>
   <ImplementationReportsDirectory>D:/PROGRAMOWANIE/Github/rs232/rs232</ImplementationReportsDirectory>
-  <DateInitialized>2014-04-28T13:11:12</DateInitialized>
+  <DateInitialized>2014-04-28T13:19:42</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

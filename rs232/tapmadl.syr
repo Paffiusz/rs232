@@ -1,0 +1,609 @@
+Release 14.7 - xst P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Reading design: tapmadl.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "tapmadl.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "tapmadl"
+Output Format                      : NGC
+Target Device                      : xc3sd1800a-4-fg676
+
+---- Source Options
+Top Module Name                    : tapmadl
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "D:/PROGRAMOWANIE/Github/rs232/rs232/Freqdiv.vhd" in Library work.
+Architecture behavioral of Entity freqdiv is up to date.
+Compiling vhdl file "D:/PROGRAMOWANIE/Github/rs232/rs232/synchronizer.vhd" in Library work.
+Architecture behavioral of Entity synchronizer is up to date.
+Compiling vhdl file "D:/PROGRAMOWANIE/Github/rs232/rs232/rsinput.vhd" in Library work.
+Entity <rsinput> compiled.
+Entity <rsinput> (Architecture <behavioral>) compiled.
+Compiling vhdl file "D:/PROGRAMOWANIE/Github/rs232/rs232/adder.vhd" in Library work.
+Architecture behavioral of Entity adder is up to date.
+Compiling vhdl file "D:/PROGRAMOWANIE/Github/rs232/rs232/rsoutput.vhd" in Library work.
+Architecture behavioral of Entity rsoutput is up to date.
+Compiling vhdl file "D:/PROGRAMOWANIE/Github/rs232/rs232/top.vhd" in Library work.
+Architecture behavioral of Entity tapmadl is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <tapmadl> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <rsinput> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <adder> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <rsoutput> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <Freqdiv> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <synchronizer> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <tapmadl> in library <work> (Architecture <behavioral>).
+Entity <tapmadl> analyzed. Unit <tapmadl> generated.
+
+Analyzing Entity <rsinput> in library <work> (Architecture <behavioral>).
+Entity <rsinput> analyzed. Unit <rsinput> generated.
+
+Analyzing Entity <Freqdiv> in library <work> (Architecture <behavioral>).
+Entity <Freqdiv> analyzed. Unit <Freqdiv> generated.
+
+Analyzing Entity <synchronizer> in library <work> (Architecture <behavioral>).
+Entity <synchronizer> analyzed. Unit <synchronizer> generated.
+
+Analyzing Entity <adder> in library <work> (Architecture <behavioral>).
+Entity <adder> analyzed. Unit <adder> generated.
+
+Analyzing Entity <rsoutput> in library <work> (Architecture <behavioral>).
+Entity <rsoutput> analyzed. Unit <rsoutput> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <adder>.
+    Related source file is "D:/PROGRAMOWANIE/Github/rs232/rs232/adder.vhd".
+    Found 8-bit register for signal <added_sig_o>.
+    Found 8-bit adder for signal <added_sig_o$add0000> created at line 22.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <adder> synthesized.
+
+
+Synthesizing Unit <Freqdiv>.
+    Related source file is "D:/PROGRAMOWANIE/Github/rs232/rs232/Freqdiv.vhd".
+    Found 1-bit register for signal <CLKout>.
+    Found 32-bit comparator greatequal for signal <CLKout$cmp_ge0000> created at line 24.
+    Found 32-bit up counter for signal <counter>.
+    Found 32-bit comparator less for signal <counter$cmp_lt0000> created at line 22.
+    Found 32-bit comparator less for signal <counter$cmp_lt0001> created at line 24.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+	inferred   3 Comparator(s).
+Unit <Freqdiv> synthesized.
+
+
+Synthesizing Unit <synchronizer>.
+    Related source file is "D:/PROGRAMOWANIE/Github/rs232/rs232/synchronizer.vhd".
+    Found 1-bit register for signal <sig_o>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <synchronizer> synthesized.
+
+
+Synthesizing Unit <rsinput>.
+    Related source file is "D:/PROGRAMOWANIE/Github/rs232/rs232/rsinput.vhd".
+    Found 8-bit register for signal <rs_data_o>.
+    Found 1-bit register for signal <d_ready>.
+    Found 1-bit register for signal <led>.
+    Found 4-bit up counter for signal <count>.
+    Found 4-bit adder for signal <d_ready$add0000> created at line 75.
+    Found 1-bit register for signal <q<0>>.
+    Found 8-bit register for signal <rs_word>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  19 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <rsinput> synthesized.
+
+
+Synthesizing Unit <rsoutput>.
+    Related source file is "D:/PROGRAMOWANIE/Github/rs232/rs232/rsoutput.vhd".
+    Found 1-bit register for signal <TXD_o>.
+    Found 4-bit up counter for signal <count>.
+    Found 1-bit register for signal <q<0>>.
+    Found 8-bit register for signal <temp>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  10 D-type flip-flop(s).
+Unit <rsoutput> synthesized.
+
+
+Synthesizing Unit <tapmadl>.
+    Related source file is "D:/PROGRAMOWANIE/Github/rs232/rs232/top.vhd".
+Unit <tapmadl> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 4-bit adder                                           : 1
+ 8-bit adder                                           : 1
+# Counters                                             : 4
+ 32-bit up counter                                     : 2
+ 4-bit up counter                                      : 2
+# Registers                                            : 19
+ 1-bit register                                        : 16
+ 8-bit register                                        : 3
+# Comparators                                          : 6
+ 32-bit comparator greatequal                          : 2
+ 32-bit comparator less                                : 4
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 4-bit adder                                           : 1
+ 8-bit adder                                           : 1
+# Counters                                             : 4
+ 32-bit up counter                                     : 2
+ 4-bit up counter                                      : 2
+# Registers                                            : 40
+ Flip-Flops                                            : 40
+# Comparators                                          : 6
+ 32-bit comparator greatequal                          : 2
+ 32-bit comparator less                                : 4
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <tapmadl> ...
+
+Optimizing unit <adder> ...
+
+Optimizing unit <rsinput> ...
+
+Optimizing unit <rsoutput> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block tapmadl, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 112
+ Flip-Flops                                            : 112
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : tapmadl.ngr
+Top Level Output File Name         : tapmadl
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 5
+
+Cell Usage :
+# BELS                             : 369
+#      GND                         : 1
+#      INV                         : 20
+#      LUT1                        : 78
+#      LUT2                        : 18
+#      LUT2_L                      : 3
+#      LUT3                        : 18
+#      LUT3_L                      : 1
+#      LUT4                        : 38
+#      LUT4_L                      : 3
+#      MUXCY                       : 122
+#      MUXF5                       : 2
+#      VCC                         : 1
+#      XORCY                       : 64
+# FlipFlops/Latches                : 112
+#      FD                          : 8
+#      FD_1                        : 7
+#      FDE                         : 9
+#      FDE_1                       : 8
+#      FDR                         : 75
+#      FDRE                        : 1
+#      FDRS                        : 1
+#      FDS                         : 1
+#      FDS_1                       : 1
+#      FDSE                        : 1
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 4
+#      IBUF                        : 2
+#      OBUF                        : 2
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3sd1800afg676-4 
+
+ Number of Slices:                      124  out of  16640     0%  
+ Number of Slice Flip Flops:            111  out of  33280     0%  
+ Number of 4 input LUTs:                179  out of  33280     0%  
+ Number of IOs:                           5
+ Number of bonded IOBs:                   5  out of    519     0%  
+    IOB Flip Flops:                       1
+ Number of GCLKs:                         2  out of     24     8%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_i                              | BUFGP                  | 75    |
+ou/divi_clk/CLKout1                | BUFG                   | 23    |
+outo/divi_clk/CLKout               | NONE(outo/count_3)     | 14    |
+-----------------------------------+------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 9.996ns (Maximum Frequency: 100.040MHz)
+   Minimum input arrival time before clock: 3.811ns
+   Maximum output required time after clock: 5.531ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_i'
+  Clock period: 7.028ns (frequency: 142.284MHz)
+  Total number of paths / destination ports: 5280 / 130
+-------------------------------------------------------------------------
+Delay:               7.028ns (Levels of Logic = 17)
+  Source:            ou/divi_clk/counter_0 (FF)
+  Destination:       ou/divi_clk/counter_31 (FF)
+  Source Clock:      clk_i rising
+  Destination Clock: clk_i rising
+
+  Data Path: ou/divi_clk/counter_0 to ou/divi_clk/counter_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              3   0.591   0.674  ou/divi_clk/counter_0 (ou/divi_clk/counter_0)
+     LUT3:I0->O            1   0.648   0.000  ou/divi_clk/Mcompar_counter_cmp_lt0000_lut<0>1 (ou/divi_clk/Mcompar_counter_cmp_lt0000_lut<0>1)
+     MUXCY:S->O            1   0.632   0.000  ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<0>_0 (ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<0>1)
+     MUXCY:CI->O           1   0.065   0.000  ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<1>_0 (ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<1>1)
+     MUXCY:CI->O           1   0.065   0.000  ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<2>_0 (ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<2>1)
+     MUXCY:CI->O           1   0.065   0.000  ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<3>_0 (ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<3>1)
+     MUXCY:CI->O           1   0.065   0.000  ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<4>_0 (ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<4>1)
+     MUXCY:CI->O           1   0.065   0.000  ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<5>_0 (ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<5>1)
+     MUXCY:CI->O           1   0.065   0.000  ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<6>_0 (ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<6>1)
+     MUXCY:CI->O           1   0.065   0.000  ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<7>_0 (ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<7>1)
+     MUXCY:CI->O           1   0.065   0.000  ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<8>_0 (ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<8>1)
+     MUXCY:CI->O           1   0.065   0.000  ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<9>_0 (ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<9>1)
+     MUXCY:CI->O           1   0.065   0.000  ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<10>_0 (ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<10>1)
+     MUXCY:CI->O           1   0.065   0.000  ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<11>_0 (ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<11>1)
+     MUXCY:CI->O           1   0.065   0.000  ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<12>_0 (ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<12>1)
+     MUXCY:CI->O           1   0.065   0.000  ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<13>_0 (ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<13>1)
+     MUXCY:CI->O           2   0.269   0.590  ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<14>_0 (ou/divi_clk/Mcompar_counter_cmp_lt0000_cy<14>1)
+     LUT2:I0->O           32   0.648   1.262  ou/divi_clk/counter_and00001 (ou/divi_clk/counter_and0000)
+     FDR:R                     0.869          ou/divi_clk/counter_0
+    ----------------------------------------
+    Total                      7.028ns (4.502ns logic, 2.526ns route)
+                                       (64.1% logic, 35.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'ou/divi_clk/CLKout1'
+  Clock period: 9.996ns (frequency: 100.040MHz)
+  Total number of paths / destination ports: 135 / 39
+-------------------------------------------------------------------------
+Delay:               4.998ns (Levels of Logic = 2)
+  Source:            ou/count_3 (FF)
+  Destination:       ou/rs_word_7 (FF)
+  Source Clock:      ou/divi_clk/CLKout1 rising
+  Destination Clock: ou/divi_clk/CLKout1 falling
+
+  Data Path: ou/count_3 to ou/rs_word_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRS:C->Q            15   0.591   1.160  ou/count_3 (ou/count_3)
+     LUT4:I0->O            4   0.648   0.667  ou/rs_word_7_mux000011 (ou/d_ready_cmp_eq0000)
+     LUT2:I1->O            1   0.643   0.420  ou/rs_word_7_mux00000 (ou/rs_word_7_mux00000)
+     FDS_1:S                   0.869          ou/rs_word_7
+    ----------------------------------------
+    Total                      4.998ns (2.751ns logic, 2.247ns route)
+                                       (55.0% logic, 45.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'outo/divi_clk/CLKout'
+  Clock period: 4.831ns (frequency: 206.996MHz)
+  Total number of paths / destination ports: 64 / 11
+-------------------------------------------------------------------------
+Delay:               4.831ns (Levels of Logic = 2)
+  Source:            outo/count_1 (FF)
+  Destination:       outo/count_3 (FF)
+  Source Clock:      outo/divi_clk/CLKout rising
+  Destination Clock: outo/divi_clk/CLKout rising
+
+  Data Path: outo/count_1 to outo/count_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              9   0.591   0.963  outo/count_1 (outo/count_1)
+     LUT4:I0->O            2   0.648   0.479  outo/q_mux0000_inv211 (outo/N10)
+     LUT4:I2->O            5   0.648   0.633  outo/q_mux0000_inv1 (outo/q_mux0000_inv)
+     FDS:S                     0.869          outo/TXD_o
+    ----------------------------------------
+    Total                      4.831ns (2.756ns logic, 2.075ns route)
+                                       (57.0% logic, 43.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ou/divi_clk/CLKout1'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              3.811ns (Levels of Logic = 2)
+  Source:            rst_i (PAD)
+  Destination:       ou/count_2 (FF)
+  Destination Clock: ou/divi_clk/CLKout1 rising
+
+  Data Path: rst_i to ou/count_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             5   0.849   0.776  rst_i_IBUF (rst_i_IBUF)
+     LUT2:I0->O            6   0.648   0.669  ou/q_mux0000_inv1 (ou/q_mux0000_inv)
+     FDR:R                     0.869          ou/led
+    ----------------------------------------
+    Total                      3.811ns (2.366ns logic, 1.445ns route)
+                                       (62.1% logic, 37.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_i'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.521ns (Levels of Logic = 1)
+  Source:            RXD_i (PAD)
+  Destination:       ou/synch_RXD/sig_o (FF)
+  Destination Clock: clk_i rising
+
+  Data Path: RXD_i to ou/synch_RXD/sig_o
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.849   0.420  RXD_i_IBUF (RXD_i_IBUF)
+     FD:D                      0.252          ou/synch_RXD/sig_o
+    ----------------------------------------
+    Total                      1.521ns (1.101ns logic, 0.420ns route)
+                                       (72.4% logic, 27.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'outo/divi_clk/CLKout'
+  Total number of paths / destination ports: 6 / 6
+-------------------------------------------------------------------------
+Offset:              3.635ns (Levels of Logic = 2)
+  Source:            rst_i (PAD)
+  Destination:       outo/count_3 (FF)
+  Destination Clock: outo/divi_clk/CLKout rising
+
+  Data Path: rst_i to outo/count_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             5   0.849   0.636  rst_i_IBUF (rst_i_IBUF)
+     LUT4:I3->O            5   0.648   0.633  outo/q_mux0000_inv1 (outo/q_mux0000_inv)
+     FDS:S                     0.869          outo/TXD_o
+    ----------------------------------------
+    Total                      3.635ns (2.366ns logic, 1.269ns route)
+                                       (65.1% logic, 34.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'outo/divi_clk/CLKout'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              5.531ns (Levels of Logic = 1)
+  Source:            outo/TXD_o (FF)
+  Destination:       TXD_o (PAD)
+  Source Clock:      outo/divi_clk/CLKout rising
+
+  Data Path: outo/TXD_o to TXD_o
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDS:C->Q              1   0.591   0.420  outo/TXD_o (outo/TXD_o)
+     OBUF:I->O                 4.520          TXD_o_OBUF (TXD_o)
+    ----------------------------------------
+    Total                      5.531ns (5.111ns logic, 0.420ns route)
+                                       (92.4% logic, 7.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'ou/divi_clk/CLKout1'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              5.531ns (Levels of Logic = 1)
+  Source:            ou/led (FF)
+  Destination:       led (PAD)
+  Source Clock:      ou/divi_clk/CLKout1 rising
+
+  Data Path: ou/led to led
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              1   0.591   0.420  ou/led (ou/led)
+     OBUF:I->O                 4.520          led_OBUF (led)
+    ----------------------------------------
+    Total                      5.531ns (5.111ns logic, 0.420ns route)
+                                       (92.4% logic, 7.6% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.53 secs
+ 
+--> 
+
+Total memory usage is 226188 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

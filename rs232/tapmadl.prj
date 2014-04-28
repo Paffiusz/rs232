@@ -1,0 +1,6 @@
+vhdl work "synchronizer.vhd"
+vhdl work "Freqdiv.vhd"
+vhdl work "rsoutput.vhd"
+vhdl work "rsinput.vhd"
+vhdl work "adder.vhd"
+vhdl work "top.vhd"

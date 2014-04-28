@@ -1,0 +1,6 @@
+vhdl work "D:\PROGRAMOWANIE\Github\rs232\rs232\synchronizer.vhd"
+vhdl work "D:\PROGRAMOWANIE\Github\rs232\rs232\Freqdiv.vhd"
+vhdl work "D:\PROGRAMOWANIE\Github\rs232\rs232\rsoutput.vhd"
+vhdl work "D:\PROGRAMOWANIE\Github\rs232\rs232\rsinput.vhd"
+vhdl work "D:\PROGRAMOWANIE\Github\rs232\rs232\adder.vhd"
+vhdl work "D:\PROGRAMOWANIE\Github\rs232\rs232\top.vhd"

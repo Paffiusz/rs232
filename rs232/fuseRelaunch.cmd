@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "D:/PROGRAMOWANIE/Github/rs232/rs232/testtap_isim_beh.exe" -prj "D:/PROGRAMOWANIE/Github/rs232/rs232/testtap_beh.prj" "testtap" 

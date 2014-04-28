@@ -60,6 +60,10 @@ variable q : state := waiting;
 	begin
 		if rising_edge(div_clk) then
 		
+		if rst_i = '1' then
+			q:= waiting;
+		end if;
+		
 			if d_ready = '1' then
 				q:=output;
 				temp<=TXD_i;
