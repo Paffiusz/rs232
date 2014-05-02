@@ -50,55 +50,34 @@ divi_clk: Freqdiv
 
 synch_RXD: synchronizer
 	PORT MAP(  clk_i=>clk_i, sig_i=>RXD_i, sig_o=>sync_RXD);
-	
+
 
 process(div_clk)
-
 variable q : state := waiting;
-
 	begin
-		if rising_edge(div_clk) then
+		if falling_edge(div_clk) then
 		
-		if rst_i = '1' then
-			q:= waiting;
-		end if;
-		
-			if q = waiting then
+		if q = waiting then
 				count:=0;
 				led<='0';
 				d_ready<='0';
 				if sync_RXD = '0' then
 					q := input;
-					led<='1';
 				end if;
 			elsif q=input then
+				led<='1';
 				count := count + 1;
-				if count = 8 then
+				if count = 9 then
 					q:=waiting;
 					rs_data_o<=rs_word( 7 downto 0);
 					d_ready<='1';
 				end if;				
-			end if;			
-		end if;
-		
-end process;
-
-
-process(div_clk)
-	begin
-		if falling_edge(div_clk) then
-			case count is
-				when 0 => rs_word(0) <= sync_RXD;
-				when 1 => rs_word(1) <= sync_RXD;
-				when 2 => rs_word(2) <= sync_RXD;
-				when 3 => rs_word(3) <= sync_RXD;
-				when 4 => rs_word(4) <= sync_RXD;
-				when 5 => rs_word(5) <= sync_RXD;
-				when 6 => rs_word(6) <= sync_RXD;
-				when 7 => rs_word(7) <= sync_RXD;
-				when others=> rs_word <= "00000000";
-			end case;
+			end if;
+			if count>=1 and count<=8 then
+				rs_word(count-1)<=sync_RXD;
+			end if;
 		end if;
 end process;
+
 
 end Behavioral;
